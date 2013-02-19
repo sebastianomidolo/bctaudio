@@ -16,6 +16,6 @@
 
 config/database.yml
 
-LogLavori.txt
+#  LogLavori.txt
 README.rdoc
 
