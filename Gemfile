@@ -38,3 +38,7 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'ftools'
+
+
+gem 'ruby-mp3info'
+gem "taglib-ruby"
