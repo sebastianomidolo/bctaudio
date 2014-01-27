@@ -6,9 +6,12 @@
 
 # convmv -r -f ISO-8859-1 -t UTF-8 libroparlato --notest
 
-desc 'Scansione files per libro parlato'
+desc 'Scansione files per libro parlato [NON USARE]'
 
 task :hd_scan_libroparlato => :environment do
+
+  puts "Non usare, usa invece find_d_objects in clavisbct"
+  exit
 
   # Questo andrebbe reso parametrizzabile in modo da utilizzare diversi
   # modelli di collocazione
