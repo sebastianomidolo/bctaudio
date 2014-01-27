@@ -21,7 +21,6 @@ task :mdb_export => :environment do
     end
     af.create_pg_schema
     af.tables.each do |t|
-      puts "connection: #{@connection}"
       puts "tabella #{t}"
       af.drop_pg_table(t)
       af.create_pg_table(t)
@@ -38,9 +37,10 @@ task :mdb_export => :environment do
 
   sql=%Q{
 -- ALTER TABLE archivio_mp3.archivio_dischi ADD COLUMN record_id SERIAL PRIMARY KEY;
-ALTER TABLE fonoteca.fonoteca add primary key(id_disco);
-ALTER TABLE audiovisivi.t_volumi add primary key(idvolume);}
-  # ActiveRecord::Base.connection.execute(sql)
+ALTER TABLE bm_letteratura.t_volumi add primary key(id_volumi);
+ALTER TABLE bm_audiovisivi.t_volumi add primary key(idvolume);
+}
+  ActiveRecord::Base.connection.execute(sql)
 
   # ActiveRecord::Base.connection.execute(File.read("lib/sql/mdb_items.sql"))
 
